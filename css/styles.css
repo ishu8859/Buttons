@@ -1,0 +1,269 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.button-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.button-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button-secondary:hover {
+    background-color: #5a6268;
+    transform: rotate(5deg);
+}
+
+.button-gradient {
+    background: linear-gradient(45deg, #3498db, #9b59b6);
+    color: white;
+}
+
+.button-gradient:hover {
+    background: linear-gradient(45deg, #9b59b6, #3498db);
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .2);
+}
+
+.button-outline {
+    background: transparent;
+    border: 2px solid #17a2b8;
+    color: #17A2B8;
+}
+
+.button-outline:hover {
+    background-color: #17a2b8;
+    color: white;
+    transform: scale(1.05);
+}
+
+.button-animated {
+    background-color: #28a745;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-animated::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .2);
+    transition: all .3s ease;
+}
+
+.button-animated:hover::after {
+    left: 100%;
+}
+
+.button-3d {
+    background-color: #ffc107;
+    color: black;
+    box-shadow: 0 4px #b38f00;
+}
+
+.button-3d:active {
+    box-shadow: 0 2px #b38f00;
+    transform: translateY(8px);
+}
+
+.button-neon {
+    background: black;
+    color: #0d6efd;
+    border: 2px solid #0d6efd;
+    text-shadow: 0 0 5px #0d6efd, 0 0 10px #0d6efd;
+}
+
+.button-neon:hover {
+    background: #0d6efd;
+    color: black;
+    text-shadow: none;
+}
+
+.button-glow {
+    background-color: #ff5722;
+    color: white;
+    box-shadow: 0 0 10px #ff5722;
+}
+
+.button-glow:hover {
+    box-shadow: 0 0 20px #ff5722;
+}
+
+.button-ripple {
+    background-color: #673ab7;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-ripple:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.button-pulse {
+    background-color: #e91e63;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.button-shadow {
+    background-color: #009688;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+}
+
+.button-shadow:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .3);
+}
+
+.button-circle {
+    background-color: #9c27b0;
+    color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.button-circle:hover {
+    transform: scale(1.2);
+}
+
+.button-zigzag {
+    background-color: #00bcd4;
+    color: white;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+}
+
+.button-zigzag:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+}
+
+.button-metal {
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    color: white;
+    border: 1px solid #2c3e50;
+}
+
+.button-metal:hover {
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    color: #2c3e50;
+    border: 1px solid #2c3e50;
+}
+
+.button-text-only {
+    background: none;
+    color: #f39c12;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button-text-only:hover {
+    text-decoration: underline;
+}
+
+.button-frosted {
+    background: rgba(255, 255, 255, .2);
+    color: white;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.button-frosted:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+.button-mosaic {
+    background: repeating-linear-gradient(45deg, #3498db, #3498db 10px, #2ecc71 10px, #2ecc71 20px);
+    color: white;
+}
+
+.button-mosaic:hover {
+    background: repeating-linear-gradient(45deg, #2ecc71, #2ecc71 10px, #3498db 10px, #3498db 20px);
+}
+
+.button-stripe {
+    background: linear-gradient(90deg, #8e44ad 50%, #f1c40f 50%);
+    color: white;
+}
+
+.button-stripe:hover {
+    background: linear-gradient(90deg, #f1c40f 50%, #8e44ad 50%);
+}
+
+.button-bubble {
+    background: radial-gradient(circle, #f1c40f, #e74c3c);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .5);
+}
+
+.button-bubble:hover {
+    background: radial-gradient(circle, #e74c3c, #f1c40f);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .5);
+    transform: translateY(-5px);
+    transition: all .3s ease;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
